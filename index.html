@@ -2,48 +2,150 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memorial de Odalisca</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
-            background-image: url('https://www.transparenttextures.com/patterns/cloudy.png');
+            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+            background-image: url('https://www.transparenttextures.com/patterns/soft-pad.png');
             background-repeat: repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
             text-align: center;
-            padding: 50px;
-            color: #444;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
         }
+
         h1 {
-            font-size: 2.5em;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            color: #4a4a8c;
             margin-bottom: 0.2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
+
         p {
-            font-size: 1.2em;
+            font-size: 1.3em;
+            line-height: 1.6;
+            color: #555;
+            margin: 10px 0;
         }
+
         .photo {
             margin: 30px auto;
+            position: relative;
         }
+
         img {
-            max-width: 300px;
+            max-width: 100%;
+            width: 300px;
+            height: auto;
             border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border: 5px solid #fff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
         }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
         .date {
             font-style: italic;
-            margin-top: 10px;
+            font-size: 1.1em;
             color: #777;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .date::before {
+            content: '✦';
+            color: #4a4a8c;
+        }
+
+        .heart {
+            color: #ff6f61;
+            font-size: 1.5em;
+            animation: pulse 1.5s infinite;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 500px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            img {
+                width: 250px;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Odalisca</h1>
-    <p>Nossa eterna cachorra pãozinho.</p>
+    <div class="container">
+        <h1>Odalisca</h1>
+        <p>Nossa eterna cachorra pãozinho.</p>
 
-    <div class="photo">
-        <img src="Odalisca.jpg" alt="Foto da Odalisca">
-        <div class="date">✦ Falecimento: 30/04/2025</div>
+        <div class="photo">
+            <img src="Odalisca.jpg" alt="Foto da Odalisca">
+            <div class="date">Falecimento: 30/04/2025</div>
+        </div>
+
+        <p>Para sempre em nossos corações <span class="heart">💖</span></p>
     </div>
 
-    <p>Para sempre em nossos corações 💖</p>
+    <footer>
+        Criado com amor em memória de Odalisca
+    </footer>
 </body>
 </html>
